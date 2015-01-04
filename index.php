@@ -196,6 +196,30 @@
                     var enterTime = new Date('01/01/2015 ' + inputsValues['enter'] + ':00');
                     var leaveTime = new Date('01/01/2015 ' + inputsValues['leave'] + ':00');
                     
+                    if (new Date(inputsValues['datePicker']) == 'Invalid Date') {
+                        _continue = false;
+                        
+                        $('#datePicker').css({
+                            border: '1px solid red'
+                        });
+                    }
+                    
+                    if (enterTime == 'Invalid Date') {
+                        _continue = false;
+                        
+                        $('#enter').css({
+                            border: '1px solid red'
+                        });
+                    }
+                    
+                    if (leaveTime == 'Invalid Date') {
+                        _continue = false;
+                        
+                        $('#leave').css({
+                            border: '1px solid red'
+                        });
+                    }
+                    
                     if (enterTime > leaveTime) {
                         _continue = false;
                         
